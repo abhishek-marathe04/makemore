@@ -4,6 +4,8 @@ import torch
 import torch.nn.functional as F
 import json
 
+from makemore_part2_app_utils import generate_name_part2
+
 # ---------------------------------------------------------
 # LOAD MODEL ARTIFACTS (W, itos)
 # ---------------------------------------------------------
@@ -114,7 +116,7 @@ st.markdown("### ✨ Generated Names")
 
 if st.button("Generate"):
     for _ in range(count):
-        name = generate_name(
+        name = generate_name_part2(
             prefix=prefix,
             temperature=temperature,
             top_k=top_k,
